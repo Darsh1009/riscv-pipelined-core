@@ -1,0 +1,6 @@
+# Generic (technology-independent) synthesis for area/structure estimates.
+# Not a substitute for a real PDK flow -- see README for OpenLane.
+read_verilog -sv ../rtl/pe.sv ../rtl/systolic_array.sv ../rtl/matmul_top.sv
+hierarchy -check -top matmul_top
+synth -flatten -top matmul_top
+stat
